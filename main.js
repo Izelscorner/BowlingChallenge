@@ -11,7 +11,7 @@ if (typeof(bowlingChallange) == 'undefined') {
     }
 
 
-    document.getElementById('btnNewGame').click(function(){
+    document.getElementById('btnNewGame').onclick  = function(){
     	var numberOfPlayers = document.getElementById('txtPlayerAmount').value;
     	if(numberOfPlayers === parseInt(numberOfPlayers,10)){
     		createNewGame(parseInt(numberOfPlayers,10));
@@ -20,6 +20,6 @@ if (typeof(bowlingChallange) == 'undefined') {
     		alert('Please enter a valid integer value');
     	}
     	
-    });
+    };
 
 })(bowlingChallange || {})
