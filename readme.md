@@ -26,6 +26,10 @@ Beta version is completed,
 
 TBD: The player gets additional rolls in the last frame: one additional for a spare after the second roll or two extra rolls for a strike.
 
+## Cross Browser Testing
+
+Tested on Chrome , Firefox and Safari.
+
 ## Credits
 
 Izel Aciman
