@@ -5,8 +5,7 @@ if (typeof(bowlingChallange) == 'undefined') {
 (function(scope) {
 
 
-    scope.player = function(playerIndex) {
-        this.playerIndex = playerIndex;
+    scope.player = function() {
         this.frameIndex = 0;
         this.scores = [];
 
@@ -16,18 +15,33 @@ if (typeof(bowlingChallange) == 'undefined') {
 
             this.scores.push(new scope.score());
         }
+        this.switchToNextPlayer = function(){
+            if( scope.currentPlayerIndex + 2 > scope.numberOfPlayers ){
+                scope.currentPlayerIndex = 0;
+            }
+            else{
+                 scope.currentPlayerIndex ++;
+            }
+            scope.remainingPins = 10; 
 
+            scope.updateRollButton();          
+        };
         this.rollBall = function(rollScore) {
 
-            if (this.scores[frameIndex].firstRoll == null) { // First Roll
-                this.scores[frameIndex].setFirstRoll(rollScore);
+            if (this.scores[this.frameIndex].firstRoll == null) { // First Roll
+                this.scores[this.frameIndex].setFirstRoll(rollScore);
+                scope.remainingPins = 10 - rollScore;
                 if (rollScore == 10) { //  Check if it's a strike
                     this.frameIndex++;
+                    this.switchToNextPlayer();
                 }
             } else { //Second Roll
-                this.scores[frameIndex].setSecondRoll(rollScore);
+                this.scores[this.frameIndex].setSecondRoll(rollScore);
                 this.frameIndex++;
+                this.switchToNextPlayer();
             }
+
+            scope.drawScoreBoard();
         }
 
         return true;

@@ -21,9 +21,15 @@
 }
 .newGame{
 		clear:both;
-		margin-top:520px;
+		margin-top:420px;
 
 }
 .newGame input[type=text]{
 	width:20px;
 }
+
+
+.scoreTable td{
+	min-width:40px; 
+	border: 3px solid black;
+} 

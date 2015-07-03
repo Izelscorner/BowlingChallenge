@@ -9,8 +9,10 @@ if (typeof(bowlingChallange) == 'undefined') {
     var createNewGame = function(numberOfPlayers) {
     	scope.players = [];
     	scope.currentPlayerIndex = 0;
+    	scope.numberOfPlayers = numberOfPlayers;
+    	scope.remainingPins = 10;
         for (var i = 0; i < numberOfPlayers; i++) {
-            scope.players.push(new scope.player(i));
+            scope.players.push(new scope.player());
         }
     }
 
@@ -32,7 +34,12 @@ if (typeof(bowlingChallange) == 'undefined') {
 
     //Roll Ball for current player
     document.getElementById('btnRoll').onclick = function(){
+    	scope.players[scope.currentPlayerIndex].rollBall(scope.rollBallSimulator(scope.remainingPins));
+		
+		
 
     }
 
+    createNewGame(1);
+    scope.updateRollButton();
 })(bowlingChallange || {})

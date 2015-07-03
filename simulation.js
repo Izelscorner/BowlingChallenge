@@ -14,6 +14,9 @@ if (typeof(bowlingChallange) == 'undefined') {
 	scope.drawPinStates = function(){
 
 	}
+	scope.updateRollButton = function(){
+		document.getElementById('btnRoll').value = 'Player #' + scope.currentPlayerIndex + ' Rolls';
+	}
 
 
 })(bowlingChallange || {})
