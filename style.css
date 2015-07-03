@@ -1,7 +1,13 @@
 body{
 	font-family: Arial;
 }
-
+button{
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 5px;
+	background-color: rgb(162, 199, 164);
+	border-color: rgb(203, 232, 205);
+}
 .frameContainer {
     float: left;
     margin-right: 30px;
@@ -37,11 +43,14 @@ body{
 }
 
 .newGame {
-    clear: both;
+    margin-bottom: 10px;
 }
 
 .newGame input[type=text] {
-    width: 20px;
+      width: 20px;
+  font-size: 17px;
+  text-align: center;
+
 }
 
 .scoreTable td {

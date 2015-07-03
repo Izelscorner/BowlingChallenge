@@ -14,34 +14,37 @@ if (typeof(bowlingChallange) == 'undefined') {
 
     //Adds some animation to html to display remaining pins.
     scope.drawPinStates = function() {
+    	var pinHolder = document.getElementById('pinHolder');
+    	var scoreText = document.getElementById('scoreText');
+        if (!scope.animation) {
+        	pinHolder.innerHTML  = '';
+        	scoreText.innerHTML  = '';
+            return;
+        }
+        html = '';
 
-
-		html = '';
-
-    	for(var i = 0 ; i < scope.remainingPins ; i ++){
-    		if(i == 4){
-    			html += '</br>'
-    		}
-    		else if(i == 7){
-    			html += '</br>'
-    		}
-    		else if(i == 9){
-    			html += '</br>'
-    		}
-    		html += '<span class="pins">O</span>';
-    	}
-    	document.getElementById('scoreText').innerHTML =  10 - scope.remainingPins + ' Pins Downs';
-    	document.getElementById('pinHolder').innerHTML  = html;
+        for (var i = 0; i < scope.remainingPins; i++) {
+            if (i == 4) {
+                html += '</br>'
+            } else if (i == 7) {
+                html += '</br>'
+            } else if (i == 9) {
+                html += '</br>'
+            }
+            html += '<span class="pins">O</span>';
+        }
+        scoreText.innerHTML = 10 - scope.remainingPins + ' Pins Downs';
+        pinHolder.innerHTML = html;
     }
-    scope.disableRollButtonForAnimation = function(){
-    	var but = document.getElementById("btnRoll");
-    	but.value = 'Collecting pins for next round :)';
-    	but.disabled = true;
+    scope.disableRollButtonForAnimation = function() {
+        var but = document.getElementById("btnRoll");
+        but.value = 'Collecting pins for next round :)';
+        but.disabled = true;
     }
     scope.updateRollButton = function() {
-    	var but = document.getElementById("btnRoll");
-    	but.disabled  = false;
-        but.value = 'Player #' + scope.currentPlayerIndex + ' Roll your ball';
+        var but = document.getElementById("btnRoll");
+        but.disabled = false;
+        but.innerHTML = 'Player #' + scope.currentPlayerIndex + ' Roll your ball';
     }
 
 

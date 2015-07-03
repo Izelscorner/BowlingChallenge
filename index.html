@@ -10,29 +10,33 @@
 
 <body>
     <div main="container">
+            <h1>Bowling Challenge</h1>
         <div class="newGame">
             <label>
-               Choose number of players (max 6)  <input type="text" id="txtPlayerAmount" value="2"></label>
-       
-               <label>Disable Pin Animation <input type="checkbox" id="chkAnimation" checked="true"></label>
-                 <input type="button" id="btnNewGame" value="Start a New Game">
-                <!--  <input type="button" id="btnAutoPlay" value="Auto Play"> -->
+                Choose number of players (max 6)
+                <input type="text" id="txtPlayerAmount" value="2">
+            </label>
+            <!--  <input type="button" id="btnAutoPlay" value="Auto Play"> -->
+        </div>
+        <div class="newGame">
+            <label>Pin Animation (Faster results without animation.)
+                <input type="checkbox" id="chkAnimation" checked="true">
+            </label>
+        </div>
+        <div class="newGame">
+            <button  id="btnNewGame" value="">Start a New Game</button>
         </div>
         <hr>
-        <h1>Bowling Challenge</h1>
         <div class="frameContainer">
             <div class="leftBar">
-				
             </div>
             <div class="gameArena">
-            	<div  id="pinHolder" >
-            		
-            	</div>
-            	<h1 id="scoreText"></h1>
-                <input type="button" id="btnRoll" value="Roll" class="rollButton">
+                <div id="pinHolder">
+                </div>
+                <h1 id="scoreText"></h1>
+                <button type="button" id="btnRoll"  class="rollButton"></button>
             </div>
             <div class="rightBar">
-				
             </div>
         </div>
         <div id="scoreBoard">

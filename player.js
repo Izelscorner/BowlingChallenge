@@ -54,7 +54,7 @@ if (typeof(bowlingChallange) == 'undefined') {
 
             if (typeof(this.scores[this.frameIndex]) === 'undefined') {
                 scope.gameEnd = true;
-                alert('Game Over! Start new game');
+                alert('GAME OVER ! Start a new game');
                 return;
             }
 
@@ -74,7 +74,7 @@ if (typeof(bowlingChallange) == 'undefined') {
                 this.frameIndex++;
                 this.switchToNextPlayer();
             }
-            
+
             scope.drawPinStates();
             scope.drawScoreBoard();
         }
