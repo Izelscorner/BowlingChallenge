@@ -36,7 +36,7 @@ if (typeof(bowlingChallange) == 'undefined') {
         }
         //Draws and Updates scoreboard for the game
     scope.drawScoreBoard = function() {
-        var html = '<table class="scoreTable" cellpadding="10">';
+        var html = '<table class="scoreTable" cellpadding="10" cellspacing="10">';
 
         for (var i = 0; i < scope.players.length; i++) {
             html += '<tr>';
@@ -48,7 +48,7 @@ if (typeof(bowlingChallange) == 'undefined') {
                 if (scope.players[i].scores[j].firstRoll == 10) {
                     html += '<span>X</span>';
                 } else {
-                    html += '<span>' + (scope.players[i].scores[j].firstRoll == null ? '-' : scope.players[i].scores[j].firstRoll) + ' | </span>';
+                    html += '<span class="frameScores">' + (scope.players[i].scores[j].firstRoll == null ? '-' : scope.players[i].scores[j].firstRoll) + ' <span class="seperator">|</span> </span>';
                     if (scope.players[i].scores[j].firstRoll + scope.players[i].scores[j].secondRoll == 10) {
                         html += '<span>/</span>'
                     } else {

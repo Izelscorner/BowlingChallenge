@@ -17,23 +17,34 @@ if (typeof(bowlingChallange) == 'undefined') {
             this.scores.push(new scope.score(i, this.index));
         }
         this.switchToNextPlayer = function() {
-            if (scope.currentPlayerIndex + 2 > scope.numberOfPlayers) {
-                scope.currentPlayerIndex = 0;
-            } else {
-                scope.currentPlayerIndex++;
-            }
-            scope.remainingPins = 10;
-
-            scope.updateRollButton();
-        };
-        this.getPlayerTotalScore = function(){
-            total = 0;
-            for(var i = 0 ; i < this.scores.length ; i ++){
-                var intTotal = parseInt(this.scores[i].total());
-                if(!isNaN(intTotal)){
-                        total += intTotal;
+            scope.disableRollButtonForAnimation();
+            var switchOperations = function() {
+                if (scope.currentPlayerIndex + 2 > scope.numberOfPlayers) {
+                    scope.currentPlayerIndex = 0;
+                } else {
+                    scope.currentPlayerIndex++;
                 }
-                
+                scope.remainingPins = 10;
+
+                scope.updateRollButton();
+                scope.drawPinStates();
+            }
+            console.log(scope.animation);
+            if(scope.animation) {
+                setTimeout(function(){switchOperations()}, 2000);
+            }else{
+                switchOperations();
+            }
+
+        };
+        this.getPlayerTotalScore = function() {
+            total = 0;
+            for (var i = 0; i < this.scores.length; i++) {
+                var intTotal = parseInt(this.scores[i].total());
+                if (!isNaN(intTotal)) {
+                    total += intTotal;
+                }
+
             }
 
             return total;
@@ -48,6 +59,7 @@ if (typeof(bowlingChallange) == 'undefined') {
             if (this.scores[this.frameIndex].firstRoll == null) { // First Roll
                 this.scores[this.frameIndex].firstRoll = rollScore;
                 scope.remainingPins = 10 - rollScore;
+
                 if (rollScore == 10) { //  Check if it's a strike
 
                     this.scores[this.frameIndex].secondRoll = 0;
@@ -56,11 +68,12 @@ if (typeof(bowlingChallange) == 'undefined') {
                 }
             } else { //Second Roll
                 this.scores[this.frameIndex].secondRoll = rollScore;
-
+                scope.remainingPins = scope.remainingPins - rollScore;
                 this.frameIndex++;
                 this.switchToNextPlayer();
             }
 
+            scope.drawPinStates();
             scope.drawScoreBoard();
         }
 

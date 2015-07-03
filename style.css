@@ -1,3 +1,8 @@
+.frameContainer {
+    float: left;
+    margin-right: 30px;
+}
+
 .gameArena {
     float: left;
     width: 200px;
@@ -6,10 +11,16 @@
 }
 
 .rightBar {
+    min-height: 350px;
+    width: 1px;
+    border-right: 2px solid black;
     float: left;
 }
 
 .leftBar {
+    min-height: 350px;
+    width: 1px;
+    border-left: 2px solid black;
     float: left;
 }
 
@@ -18,23 +29,32 @@
     position: absolute;
     bottom: 0;
     left: 0;
-}
-.newGame{
-		clear:both;
-
-}
-.newGame input[type=text]{
-	width:20px;
+    margin-left: 10px;
 }
 
+.newGame {
+    clear: both;
+}
 
-.scoreTable td{
-	min-width:40px; 
-	border: 3px solid black;
-	text-align: center;
-} 
+.newGame input[type=text] {
+    width: 20px;
+}
 
-.totalScore{
-	font-weight: bold;
-	color:red;
+.scoreTable td {
+    min-width: 40px;
+    border: 3px solid black;
+    text-align: center;
+}
+
+#pinHolder {
+      text-align: center;
+  font-size: 44px;
+  font-family: Arial;
+  line-height: 33px;
+
+}
+
+.totalScore {
+    font-weight: bold;
+    color: red;
 }
