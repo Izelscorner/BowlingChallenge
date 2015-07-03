@@ -4,6 +4,7 @@ if (typeof(bowlingChallange) == 'undefined') {
 
 (function(scope) {
 
+	 //Score Object for players
      scope.score = function() {
         this.firstRoll = null;
         this.secondRoll = null;
@@ -22,8 +23,8 @@ if (typeof(bowlingChallange) == 'undefined') {
 
     }
 
-
-    var drawScoreBoard = function() {
+    //Draws and Updates scoreboard for the game
+    scope.drawScoreBoard = function() {
 
     };
 
