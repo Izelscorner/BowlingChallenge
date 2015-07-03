@@ -38,7 +38,7 @@ if (typeof(bowlingChallange) == 'undefined') {
     }
     scope.disableRollButtonForAnimation = function() {
         var but = document.getElementById("btnRoll");
-        but.value = 'Collecting pins for next round :)';
+        but.innerHTML = 'Collecting pins for next round :)';
         but.disabled = true;
     }
     scope.updateRollButton = function() {
