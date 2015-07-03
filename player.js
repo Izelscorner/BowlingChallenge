@@ -32,7 +32,7 @@ if (typeof(bowlingChallange) == 'undefined') {
 
 
             if(scope.animation) {
-                setTimeout(function(){switchOperations()}, 500);
+                setTimeout(function(){switchOperations()}, 1000);
             }else{
                 switchOperations();
             }
