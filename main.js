@@ -3,21 +3,23 @@ if (typeof(bowlingChallange) == 'undefined') {
 }
 
 (function(scope) {
+    var createNewGame = function(numberOfPlayers) {
+    	scope.players = [];
+        for (var i = 0; i < numberOfPlayers; i++) {
+            scope.players.push(new scope.player(i));
+        }
+    }
 
-	var player = {name : '' , playerIndex : 0};
-	var score =  {playerIndex  : 0 , totalPoints : 0};
-	var roll = {rollIndex : 0 , previousScore : 0 , lastScore : 0}
 
-	scope.players = [];
-	scope.scores  = [];
-
-	scope.iniateFrame = function(){
-
-	}
-
-	scope.addPlayers = function(){
-		
-	}
-
+    document.getElementById('btnNewGame').click(function(){
+    	var numberOfPlayers = document.getElementById('txtPlayerAmount').value;
+    	if(numberOfPlayers === parseInt(numberOfPlayers,10)){
+    		createNewGame(parseInt(numberOfPlayers,10));
+    	}
+    	else{
+    		alert('Please enter a valid integer value');
+    	}
+    	
+    });
 
 })(bowlingChallange || {})

@@ -4,12 +4,13 @@ if (typeof(bowlingChallange) == 'undefined') {
 
 (function(scope) {
 
-	var rollBallSimulator = function(){
-		return Math.floor((Math.random() * 10) + 1);
+	var rollBallSimulator = function(remainingPins){
+		return Math.floor((Math.random() * remainingPins) + 1);
 	}
 
+
 	var drawPinStates = function(){
-		
+
 	}
 
 
