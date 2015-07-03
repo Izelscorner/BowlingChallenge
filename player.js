@@ -74,7 +74,7 @@ if (typeof(bowlingChallange) == 'undefined') {
                 this.frameIndex++;
                 this.switchToNextPlayer();
             }
-
+            
             scope.drawPinStates();
             scope.drawScoreBoard();
         }

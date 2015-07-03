@@ -30,7 +30,7 @@ if (typeof(bowlingChallange) == 'undefined') {
     		}
     		html += '<span class="pins">O</span>';
     	}
-
+    	document.getElementById('scoreText').innerHTML =  10 - scope.remainingPins + ' Pins Downs';
     	document.getElementById('pinHolder').innerHTML  = html;
     }
     scope.disableRollButtonForAnimation = function(){

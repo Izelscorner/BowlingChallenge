@@ -1,3 +1,7 @@
+body{
+	font-family: Arial;
+}
+
 .frameContainer {
     float: left;
     margin-right: 30px;
@@ -51,7 +55,13 @@
   font-size: 44px;
   font-family: Arial;
   line-height: 33px;
+    height: 150px;
 
+}
+#scoreText{
+
+	text-align: center;
+	margin-top: 40px;
 }
 .seperator{
 	font-family: Arial;
@@ -64,6 +74,7 @@
 	font-family: Arial;
 	font-size: 15px;
 	height: 20px;
+	color:blue:;
 }
 .totalScore {
     font-weight: bold;
