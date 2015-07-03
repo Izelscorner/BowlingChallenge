@@ -12,8 +12,9 @@ if (typeof(bowlingChallange) == 'undefined') {
     	scope.numberOfPlayers = numberOfPlayers;
     	scope.remainingPins = 10;
         for (var i = 0; i < numberOfPlayers; i++) {
-            scope.players.push(new scope.player());
+            scope.players.push(new scope.player(i));
         }
+        scope.drawScoreBoard(); 
     }
 
     //Iniates new Game
@@ -22,7 +23,8 @@ if (typeof(bowlingChallange) == 'undefined') {
     	var parsedValue  = parseInt(numberOfPlayers,10);
     	if(typeof(parsedValue) === "number"){
     		if(parsedValue < 1 || parsedValue > 6){
-    			alert('Please choose between 1 to 6 players');
+    		 	alert('Please choose between 1 to 6 players');
+    		 	return;
     		}
     		createNewGame(parsedValue);
     	}
@@ -36,7 +38,7 @@ if (typeof(bowlingChallange) == 'undefined') {
     document.getElementById('btnRoll').onclick = function(){
     	scope.players[scope.currentPlayerIndex].rollBall(scope.rollBallSimulator(scope.remainingPins));
 		
-		
+
 
     }
 
