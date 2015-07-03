@@ -4,6 +4,8 @@ if (typeof(bowlingChallange) == 'undefined') {
 
 (function(scope) {
 
+	var drawScoreBoard = function(){
 
+	};
 
 })(bowlingChallange || {})

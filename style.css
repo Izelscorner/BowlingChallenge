@@ -1,0 +1,21 @@
+.gameArena {
+    float: left;
+    width: 200px;
+    position: relative;
+    min-height: 350px;
+}
+
+.rightBar {
+    float: left;
+}
+
+.leftBar {
+    float: left;
+}
+
+.rollButton {
+    width: 180px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}

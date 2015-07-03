@@ -15,8 +15,9 @@ if (typeof(bowlingChallange) == 'undefined') {
 
 	}
 
-	alert('test');
-
+	scope.addPlayers = function(){
+		
+	}
 
 
 })(bowlingChallange || {})
