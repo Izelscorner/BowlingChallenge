@@ -1,6 +1,6 @@
 <snippet>
-  <content><![CDATA[
-# ${1:Bownling Challange}
+  <content>
+Bownling Challange
 
 This challange simulates simple multiplayer bowling game with random ball rolling and calculating actual scores.
 
@@ -30,9 +30,3 @@ TBD: The player gets additional rolls in the last frame: one additional for a sp
 
 Izel Aciman
 
-## License
-
-TODO: Write license
-]]></content>
-  <tabTrigger>readme</tabTrigger>
-</snippet>
