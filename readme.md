@@ -6,7 +6,7 @@ This challange simulates simple multiplayer bowling game with random ball rollin
 
 ## Installation
 
-Make a git pull request it's a simple  javascript html project, it doesn't require to be under web server.
+You can clone it to your desktop it's a simple javascript html project, it doesn't require to be under web server.
 
 ## Usage
 
