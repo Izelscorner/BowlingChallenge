@@ -55,7 +55,7 @@ if (typeof(bowlingChallange) == 'undefined') {
                         html += '<span>' + (scope.players[i].scores[j].secondRoll == null ? '-' : scope.players[i].scores[j].secondRoll) + '  </span>'
                     }
                 }
-                html += '<div>' + scope.players[i].scores[j].total() + '</div>'
+                html += '<div class="frameTotal">' + scope.players[i].scores[j].total() + '</div>'
                 html += '</td>';
             }
             html += '<td class="totalScore">';

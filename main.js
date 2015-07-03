@@ -17,6 +17,7 @@ if (typeof(bowlingChallange) == 'undefined') {
                 alert('Please choose between 1 to 6 players');
                 return;
             }
+            scope.gameEnd = false;
             scope.players = [];
             scope.currentPlayerIndex = 0;
             scope.numberOfPlayers = numberOfPlayers;
@@ -49,6 +50,15 @@ if (typeof(bowlingChallange) == 'undefined') {
     document.getElementById('btnRoll').onclick = function() {
         scope.players[scope.currentPlayerIndex].rollBall(scope.rollBallSimulator(scope.remainingPins));
     }
+
+
+    // document.getElementById('btnAutoPlay').onclick = function() {
+    //     createNewGame();
+            
+    //         while (!scope.gameEnd) {
+    //             scope.players[scope.currentPlayerIndex].rollBall(scope.rollBallSimulator(scope.remainingPins));
+    //         }
+    // }
 
     //AutoStart
     createNewGame();

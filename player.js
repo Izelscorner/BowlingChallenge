@@ -29,9 +29,10 @@ if (typeof(bowlingChallange) == 'undefined') {
                 scope.updateRollButton();
                 scope.drawPinStates();
             }
-            console.log(scope.animation);
+
+
             if(scope.animation) {
-                setTimeout(function(){switchOperations()}, 2000);
+                setTimeout(function(){switchOperations()}, 500);
             }else{
                 switchOperations();
             }
@@ -52,6 +53,7 @@ if (typeof(bowlingChallange) == 'undefined') {
         this.rollBall = function(rollScore) {
 
             if (typeof(this.scores[this.frameIndex]) === 'undefined') {
+                scope.gameEnd = true;
                 alert('Game Over! Start new game');
                 return;
             }
