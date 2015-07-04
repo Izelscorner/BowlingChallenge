@@ -4,13 +4,14 @@ if (typeof(bowlingChallange) == 'undefined') {
 
 (function(scope) {
 
-    //Score Object for players
+    //Score Object for players 
     scope.score = function(index, playerIndex) {
             this.index = index;
             this.playerIndex = playerIndex;
             this.firstRoll = null;
             this.secondRoll = null;
 
+            //Singly Linked Lists Property
             this.getNextScore = function() {
                 if (typeof(scope.players[playerIndex].scores[index + 1]) !== 'undefined') {
                     return scope.players[playerIndex].scores[index + 1];
@@ -28,7 +29,6 @@ if (typeof(bowlingChallange) == 'undefined') {
                     return '';
                 }
             }
-
 
             this.calculateStrikeSum = function() {
 

@@ -48,17 +48,18 @@ if (typeof(bowlingChallange) == 'undefined') {
         }
         //Roll Ball for current player
     document.getElementById('btnRoll').onclick = function() {
-        scope.players[scope.currentPlayerIndex].rollBall(scope.rollBallSimulator(scope.remainingPins));
+        scope.players[scope.currentPlayerIndex].rollBall();
     }
 
 
-    // document.getElementById('btnAutoPlay').onclick = function() {
-    //     createNewGame();
-            
-    //         while (!scope.gameEnd) {
-    //             scope.players[scope.currentPlayerIndex].rollBall(scope.rollBallSimulator(scope.remainingPins));
-    //         }
-    // }
+    document.getElementById('btnAutoPlay').onclick = function() {
+        createNewGame();
+        scope.animation = false;
+        document.getElementById('chkAnimation').checked = false;
+        while (!scope.gameEnd) {
+            scope.players[scope.currentPlayerIndex].rollBall(true);
+        }
+    }
 
     //AutoStart
     createNewGame();

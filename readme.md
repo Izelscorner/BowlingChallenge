@@ -25,7 +25,7 @@ Interview Challange.
 Beta version is completed,
 
 TBD: The player gets additional rolls in the last frame: one additional for a spare after the second roll or two extra rolls for a strike.
-TBD: No need for seperation of roll add 20 roll to scores and move backwards and forward.
+
 ## Cross Browser Testing
 
 Tested on Chrome , Firefox and Safari.

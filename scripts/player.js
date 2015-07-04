@@ -13,7 +13,6 @@ if (typeof(bowlingChallange) == 'undefined') {
 
         //Create EmptyScore Array for 10 Frames
         for (var i = 0; i < 10; i++) {
-
             this.scores.push(new scope.score(i, this.index));
         }
         this.switchToNextPlayer = function() {
@@ -50,7 +49,9 @@ if (typeof(bowlingChallange) == 'undefined') {
 
             return total;
         }
-        this.rollBall = function(rollScore) {
+        this.rollBall = function() {
+
+            var rollScore = scope.rollBallSimulator(scope.remainingPins);
 
             if (typeof(this.scores[this.frameIndex]) === 'undefined') {
                 scope.gameEnd = true;
@@ -77,6 +78,7 @@ if (typeof(bowlingChallange) == 'undefined') {
 
             scope.drawPinStates();
             scope.drawScoreBoard();
+
         }
 
         return true;
