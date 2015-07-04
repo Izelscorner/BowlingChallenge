@@ -1,3 +1,5 @@
+'use strict';
+
 if (typeof(bowlingChallenge) == 'undefined') {
     var bowlingChallenge = {};
 }
@@ -27,18 +29,18 @@ if (typeof(bowlingChallenge) == 'undefined') {
 
                 scope.updateRollButton();
                 scope.drawPinStates();
-            }
+            };
 
 
             if(scope.animation) {
-                setTimeout(function(){switchOperations()}, 1000);
+                setTimeout(function(){switchOperations();}, 1000);
             }else{
                 switchOperations();
             }
 
         };
         this.getPlayerTotalScore = function() {
-            total = 0;
+            var total = 0;
             for (var i = 0; i < this.scores.length; i++) {
                 var intTotal = parseInt(this.scores[i].total());
                 if (!isNaN(intTotal)) {
@@ -48,18 +50,18 @@ if (typeof(bowlingChallenge) == 'undefined') {
             }
 
             return total;
-        }
+        };
         this.rollBall = function() {
 
             var rollScore = scope.rollBallSimulator();
 
             if (typeof(this.scores[this.frameIndex]) === 'undefined') {
                 scope.gameEnd = true;
-                alert('GAME OVER ! Start a new game');
+                window.alert('GAME OVER ! Start a new game');
                 return;
             }
 
-            if (this.scores[this.frameIndex].firstRoll == null) { // First Roll
+            if (this.scores[this.frameIndex].firstRoll === null) { // First Roll
                 this.scores[this.frameIndex].firstRoll = rollScore;
                 scope.remainingPins = 10 - rollScore;
 
@@ -79,9 +81,9 @@ if (typeof(bowlingChallenge) == 'undefined') {
             scope.drawPinStates();
             scope.drawScoreBoard();
 
-        }
+        };
 
         return true;
-    }
+    };
 
-})(bowlingChallenge || {})
+})(bowlingChallenge || {});

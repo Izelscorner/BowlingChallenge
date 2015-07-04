@@ -1,3 +1,5 @@
+'use strict';
+
 if (typeof(bowlingChallenge) == 'undefined') {
     var bowlingChallenge = {};
 }
@@ -14,7 +16,7 @@ if (typeof(bowlingChallenge) == 'undefined') {
         var parsedValue = parseInt(numberOfPlayers, 10);
         if (!isNaN(parsedValue)) {
             if (parsedValue < 1 || parsedValue > 6) {
-                alert('Please choose between 1 to 6 players');
+                window.alert('Please choose between 1 to 6 players');
                 return;
             }
             scope.gameEnd = false;
@@ -31,13 +33,13 @@ if (typeof(bowlingChallenge) == 'undefined') {
             scope.drawPinStates();
 
         } else {
-            alert('Please enter a valid integer value');
+            window.alert('Please enter a valid integer value');
         }
 
 
-    }
+    };
 
-    //Iniates new Game
+    //Initiates new Game
     document.getElementById('btnNewGame').onclick = function() {
         createNewGame();
 
@@ -45,12 +47,12 @@ if (typeof(bowlingChallenge) == 'undefined') {
 
     document.getElementById('chkAnimation').onchange = function() {
             createNewGame();
-    }
-    
+    };
+
     //Roll Ball for current player
     document.getElementById('btnRoll').onclick = function() {
         scope.players[scope.currentPlayerIndex].rollBall();
-    }
+    };
 
     //Simulates Entire Game Automaticlly.
     document.getElementById('btnAutoPlay').onclick = function() {
@@ -60,11 +62,11 @@ if (typeof(bowlingChallenge) == 'undefined') {
         while (!scope.gameEnd) {
             scope.players[scope.currentPlayerIndex].rollBall();
         }
-    }
+    };
 
     //AutoStart
     createNewGame();
 
 
 
-})(bowlingChallenge || {})
+})(bowlingChallenge || {});

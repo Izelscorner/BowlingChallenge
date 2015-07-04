@@ -1,3 +1,5 @@
+'use strict';
+
 if (typeof(bowlingChallenge) == 'undefined') {
     var bowlingChallenge = {};
 }
@@ -10,11 +12,11 @@ if (typeof(bowlingChallenge) == 'undefined') {
         result = result || null;
 
         //Test Result
-        if(result != null) return result;
+        if(result !== null) return result;
 
         //Random Result
         return Math.floor(Math.random() * (scope.remainingPins - 0 + 1)) + 0;
-    }
+    };
 
 
 
@@ -27,31 +29,31 @@ if (typeof(bowlingChallenge) == 'undefined') {
         	scoreText.innerHTML  = '';
             return;
         }
-        html = '';
+        var html = '';
 
         for (var i = 0; i < scope.remainingPins; i++) {
             if (i == 4) {
-                html += '</br>'
+                html += '</br>';
             } else if (i == 7) {
-                html += '</br>'
+                html += '</br>';
             } else if (i == 9) {
-                html += '</br>'
+                html += '</br>';
             }
             html += '<span class="pins">O</span>';
         }
         scoreText.innerHTML = 10 - scope.remainingPins + ' Pins Downs';
         pinHolder.innerHTML = html;
-    }
+    };
     scope.disableRollButtonForAnimation = function() {
-        var but = document.getElementById("btnRoll");
+        var but = document.getElementById('btnRoll');
         but.innerHTML = 'Collecting pins for next round :)';
         but.disabled = true;
-    }
+    };
     scope.updateRollButton = function() {
-        var but = document.getElementById("btnRoll");
+        var but = document.getElementById('btnRoll');
         but.disabled = false;
         but.innerHTML = 'Player #' + scope.currentPlayerIndex + '<br> Random Roll';
-    }
+    };
 
 
-})(bowlingChallenge || {})
+})(bowlingChallenge || {});
