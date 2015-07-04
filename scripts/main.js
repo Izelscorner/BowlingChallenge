@@ -53,11 +53,11 @@ if (typeof(bowlingChallange) == 'undefined') {
 
 
     document.getElementById('btnAutoPlay').onclick = function() {
-        createNewGame();
-        scope.animation = false;
+        //turn off animation to cause async operation to block loop for instant multiplayer results.
         document.getElementById('chkAnimation').checked = false;
+        createNewGame();  
         while (!scope.gameEnd) {
-            scope.players[scope.currentPlayerIndex].rollBall(true);
+            scope.players[scope.currentPlayerIndex].rollBall();
         }
     }
 
