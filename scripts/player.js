@@ -51,7 +51,7 @@ if (typeof(bowlingChallange) == 'undefined') {
         }
         this.rollBall = function() {
 
-            var rollScore = scope.rollBallSimulator(scope.remainingPins);
+            var rollScore = scope.rollBallSimulator();
 
             if (typeof(this.scores[this.frameIndex]) === 'undefined') {
                 scope.gameEnd = true;

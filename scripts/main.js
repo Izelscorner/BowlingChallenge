@@ -45,15 +45,16 @@ if (typeof(bowlingChallange) == 'undefined') {
 
     document.getElementById('chkAnimation').onchange = function() {
             createNewGame();
-        }
-        //Roll Ball for current player
+    }
+    
+    //Roll Ball for current player
     document.getElementById('btnRoll').onclick = function() {
         scope.players[scope.currentPlayerIndex].rollBall();
     }
 
-
+    //Simulates Entire Game Automaticlly.
     document.getElementById('btnAutoPlay').onclick = function() {
-        //turn off animation to cause async operation to block loop for instant multiplayer results.
+        //turn off animation to prevent async operation to cause race condition in loop.
         document.getElementById('chkAnimation').checked = false;
         createNewGame();  
         while (!scope.gameEnd) {

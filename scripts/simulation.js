@@ -5,9 +5,15 @@ if (typeof(bowlingChallange) == 'undefined') {
 (function(scope) {
 
     //Generates random number for the simulation of the game.
-    scope.rollBallSimulator = function(remainingPins) {
-        remainingPins = remainingPins || 10;
-        return Math.floor(Math.random() * (remainingPins - 0 + 1)) + 0;
+    //For Testing you can pass result for required result
+    scope.rollBallSimulator = function(result) {
+        result = result || null;
+
+        //Test Result
+        if(result != null) return result;
+
+        //Random Result
+        return Math.floor(Math.random() * (scope.remainingPins - 0 + 1)) + 0;
     }
 
 
@@ -44,7 +50,7 @@ if (typeof(bowlingChallange) == 'undefined') {
     scope.updateRollButton = function() {
         var but = document.getElementById("btnRoll");
         but.disabled = false;
-        but.innerHTML = 'Player #' + scope.currentPlayerIndex + ' Roll your ball';
+        but.innerHTML = 'Player #' + scope.currentPlayerIndex + '<br> Random Roll';
     }
 
 
