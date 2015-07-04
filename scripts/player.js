@@ -64,7 +64,7 @@ if (typeof(bowlingChallange) == 'undefined') {
 
                 if (rollScore == 10) { //  Check if it's a strike
 
-                    this.scores[this.frameIndex].secondRoll = 0;
+                    //this.scores[this.frameIndex].secondRoll = 0;
                     this.frameIndex++;
                     this.switchToNextPlayer();
                 }

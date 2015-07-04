@@ -11,24 +11,43 @@ if (typeof(bowlingChallange) == 'undefined') {
             this.firstRoll = null;
             this.secondRoll = null;
 
-            this.total = function() {
-                if (this.firstRoll == 10) { //if Strike
-                    if (typeof(scope.players[playerIndex].scores[index + 1]) === 'undefined') { //Last Hand
-                        return 20;
-                    } else if (scope.players[playerIndex].scores[index + 1].secondRoll != null) {
-                        return 10 + scope.players[playerIndex].scores[index + 1].firstRoll + scope.players[playerIndex].scores[index + 1].secondRoll;
-                    } else {
-                        return '';
-                    }
-                } else if (this.firstRoll + this.secondRoll == 10) { // if Pair
-                    if (typeof(scope.players[playerIndex].scores[index + 1]) === 'undefined') { //Last Hand}
-                        return 10;
-                    } else if (scope.players[playerIndex].scores[index + 1].firstRoll != null) {
-                        return 10 + scope.players[playerIndex].scores[index + 1].firstRoll;
-                    } else {
-                        return '';
-                    }
+            this.getNextScore = function() {
+                if (typeof(scope.players[playerIndex].scores[index + 1]) !== 'undefined') {
+                    return scope.players[playerIndex].scores[index + 1];
                 } else {
+                    return null;
+                }
+            }
+
+            this.calculatePairSum = function() {
+                if (this.getNextScore() === null) { //Last Hand no Additional frams 20 points bonus 
+                    return 20;
+                } else if (this.getNextScore().firstRoll != null) { //Add Second Roll
+                    return 10 + this.getNextScore().firstRoll;
+                } else {
+                    return '';
+                }
+            }
+
+
+            this.calculateStrikeSum = function() {
+
+                if (this.getNextScore() == null || (this.getNextScore().firstRoll == 10 && this.getNextScore().getNextScore() == null)) { //Last Hand No Additional Frames directly 30 points bonus
+                    return 30;
+                } else if (this.getNextScore().firstRoll == 10 && this.getNextScore().getNextScore().firstRoll != null) { // two row in a strike 
+                    return 10 + this.getNextScore().firstRoll + this.getNextScore().getNextScore().firstRoll;
+                } else if (this.getNextScore().firstRoll != 10 && this.getNextScore().secondRoll != null) { // No following strike
+                    return 10 + this.getNextScore().firstRoll + this.getNextScore().secondRoll;
+                } else {
+                    return '';
+                }
+            }
+            this.total = function() {
+                if (this.firstRoll == 10) { // Strike
+                    return this.calculateStrikeSum();
+                } else if (this.firstRoll + this.secondRoll == 10) { //  Pair
+                    return this.calculatePairSum();
+                } else { //No pair or Strike
                     return this.firstRoll + this.secondRoll;
                 }
             }
