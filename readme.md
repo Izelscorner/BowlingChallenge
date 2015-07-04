@@ -1,6 +1,6 @@
 <snippet>
   <content>
-## Bownling Challange
+## Bownling Challenge
 
 This challange simulates simple multiplayer bowling game with random ball rolling and calculating actual scores.
 
