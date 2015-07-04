@@ -1,5 +1,5 @@
-if (typeof(bowlingChallange) == 'undefined') {
-    var bowlingChallange = {};
+if (typeof(bowlingChallenge) == 'undefined') {
+    var bowlingChallenge = {};
 }
 
 (function(scope) {
@@ -54,4 +54,4 @@ if (typeof(bowlingChallange) == 'undefined') {
     }
 
 
-})(bowlingChallange || {})
+})(bowlingChallenge || {})

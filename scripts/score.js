@@ -1,5 +1,5 @@
-if (typeof(bowlingChallange) == 'undefined') {
-    var bowlingChallange = {};
+if (typeof(bowlingChallenge) == 'undefined') {
+    var bowlingChallenge = {};
 }
 
 (function(scope) {
@@ -88,4 +88,4 @@ if (typeof(bowlingChallange) == 'undefined') {
         document.getElementById('scoreBoard').innerHTML = html;
     };
 
-})(bowlingChallange || {})
+})(bowlingChallenge || {})
