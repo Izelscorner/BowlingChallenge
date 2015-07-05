@@ -10,7 +10,9 @@ button {
     border-color: rgb(203, 232, 205);
     border: none;
 }
-
+.container{
+  min-height: 730px;
+}
 .frameContainer {
     float: left;
     margin-right: 30px;
@@ -107,3 +109,6 @@ button {
     margin-left: 10px;
 }
 
+.footer{
+  clear: both;margin-top: 20px;text-align: center
+}

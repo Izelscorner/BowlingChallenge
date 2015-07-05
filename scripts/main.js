@@ -45,12 +45,12 @@ if (typeof(bowlingChallenge) == 'undefined') {
         createNewGame();
 
     };
-
+    //Turn off or on the animation
     document.getElementById('chkAnimation').onchange = function() {
-        createNewGame();
+        scope.animation = document.getElementById('chkAnimation').checked
     };
 
-
+    //Turn off or on the sound effect
     document.getElementById('chkSound').onchange = function() {
         scope.sound = document.getElementById('chkSound').checked
     };
@@ -68,7 +68,9 @@ if (typeof(bowlingChallenge) == 'undefined') {
         //turn off animation to prevent async operation to cause race condition in loop.
         document.getElementById('chkAnimation').checked = false;
         document.getElementById('chkSound').checked = false;
-        createNewGame();
+        scope.animation = false;
+        scope.sound = false;
+       
         while (!scope.gameEnd) {
             scope.players[scope.currentPlayerIndex].rollBall();
         }
