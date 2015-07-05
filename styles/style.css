@@ -1,45 +1,19 @@
-body{
-	font-family: Arial;
+body {
+    font-family: Arial;
 }
-button{
-	font-size: 16px;
-	cursor: pointer;
-	border-radius: 5px;
-	background-color: rgb(162, 199, 164);
-	border-color: rgb(203, 232, 205);
+
+button {
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 7px;
+    background-color: rgb(242, 242, 242);
+    border-color: rgb(203, 232, 205);
+    border: none;
 }
+
 .frameContainer {
     float: left;
     margin-right: 30px;
-}
-
-.gameArena {
-    float: left;
-    width: 200px;
-    position: relative;
-    min-height: 350px;
-}
-
-.rightBar {
-    min-height: 350px;
-    width: 1px;
-    border-right: 2px solid black;
-    float: left;
-}
-
-.leftBar {
-    min-height: 350px;
-    width: 1px;
-    border-left: 2px solid black;
-    float: left;
-}
-
-.rollButton {
-    width: 180px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    margin-left: 10px;
 }
 
 .newGame {
@@ -47,10 +21,9 @@ button{
 }
 
 .newGame input[type=text] {
-      width: 20px;
-  font-size: 17px;
-  text-align: center;
-
+    width: 20px;
+    font-size: 17px;
+    text-align: center;
 }
 
 .scoreTable td {
@@ -59,33 +32,78 @@ button{
     text-align: center;
 }
 
-#pinHolder {
-      text-align: center;
-  font-size: 44px;
-  font-family: Arial;
-  line-height: 33px;
-    height: 150px;
+#scoreText {
+    text-align: center;
+    margin-top: 40px;
+}
 
+.seperator {
+    font-family: Arial;
+    font-size: 21px;
 }
-#scoreText{
 
-	text-align: center;
-	margin-top: 40px;
+.frameTotal {
+    border-top: 1px solid black;
+    margin-top: 4px;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 15px;
+    height: 20px;
+    color: blue;
 }
-.seperator{
-	font-family: Arial;
-  font-size: 21px;
-}
-.frameTotal{
-	border-top: 1px solid black;
-	margin-top: 4px;
-	font-weight: bold;
-	font-family: Arial;
-	font-size: 15px;
-	height: 20px;
-	color:blue;
-}
+
 .totalScore {
     font-weight: bold;
     color: red;
 }
+
+.gameArena {
+    float: left;
+    width: 200px;
+    position: relative;
+    min-height: 500px;
+    background-image: url('../images/alley.png')
+}
+
+.rightBar {
+    min-height: 450px;
+    width: 1px;
+    border-right: 0px solid black;
+    float: left;
+}
+
+.leftBar {
+    min-height: 450px;
+    width: 1px;
+    border-left: 0px solid black;
+    float: left;
+}
+
+
+
+#pinHolder {
+    text-align: center;
+    font-size: 44px;
+    font-family: Arial;
+    line-height: 33px;
+    height: 300px;
+    padding-left: 24px;
+    padding-top: 5px;
+}
+
+.pins {
+    background-image: url('../images/pin.png');
+    display: inline-block;
+    height: 61px;
+    width: 40px;
+    background-repeat: no-repeat;
+}
+
+.rollButton {
+    width: 180px;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    margin-left: 10px;
+}
+

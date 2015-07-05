@@ -39,7 +39,7 @@ if (typeof(bowlingChallenge) == 'undefined') {
             } else if (i == 9) {
                 html += '</br>';
             }
-            html += '<span class="pins">O</span>';
+            html += '<span class="pins"></span>';
         }
         scoreText.innerHTML = 10 - scope.remainingPins + ' Pins Downs';
         pinHolder.innerHTML = html;
