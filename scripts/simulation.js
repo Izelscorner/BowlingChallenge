@@ -17,15 +17,15 @@ if (typeof(bowlingChallenge) == 'undefined') {
         //Random Result 
 
         //from 0 - 10 
-        return randomNumberGeneratorInterval(0,10);
+        return randomNumberGeneratorInterval(0,scope.remainingPins);
 
         //from 1 - 10 
-        // return randomNumberGeneratorInterval(1,10);
+        // return randomNumberGeneratorInterval(1,scope.remainingPins);
     };
 
 
     var randomNumberGeneratorInterval = function(min,max){
-        return Math.floor(Math.random() * (scope.remainingPins - min + 1)) + min;
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
 
