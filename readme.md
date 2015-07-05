@@ -34,3 +34,6 @@ Tested on Chrome , Firefox and Safari.
 
 Izel Aciman
 
+## Disclaimer
+All images & Sound Effects are copyright to their respective owners.
+
