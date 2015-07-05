@@ -14,10 +14,19 @@ if (typeof(bowlingChallenge) == 'undefined') {
         //Test Result
         if(result !== null) return result;
 
-        //Random Result
-        return Math.floor(Math.random() * (scope.remainingPins - 0 + 1)) + 0;
+        //Random Result 
+
+        //from 0 - 10 
+        return randomNumberGeneratorInterval(0,10);
+
+        //from 1 - 10 
+        // return randomNumberGeneratorInterval(1,10);
     };
 
+
+    var randomNumberGeneratorInterval = function(min,max){
+        return Math.floor(Math.random() * (scope.remainingPins - min + 1)) + min;
+    }
 
 
     //Adds some animation to html to display remaining pins.
