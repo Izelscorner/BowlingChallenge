@@ -67,7 +67,7 @@ if (typeof(bowlingChallenge) == 'undefined') {
             for (var j = 0; j < scope.players[i].scores.length; j++) {
                 html += '<td>';
                 if (scope.players[i].scores[j].firstRoll == 10) {
-                    html += '<span>X</span>';
+                    html += '<span class="strike">X</span>';
                 } else {
                     html += '<span class="frameScores">' + (scope.players[i].scores[j].firstRoll === null ? '-' : scope.players[i].scores[j].firstRoll) + ' <span class="seperator">|</span> </span>';
                     if (scope.players[i].scores[j].firstRoll + scope.players[i].scores[j].secondRoll === 10) {

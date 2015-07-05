@@ -38,7 +38,7 @@ button {
 }
 
 .scoreTable td span {
-   
+
 }
 
 #scoreText {
@@ -119,4 +119,8 @@ button {
     clear: both;
     margin-top: 20px;
     text-align: center
+}
+.strike{
+  color:rgb(163, 58, 110);;
+  font-size: 21px;
 }
