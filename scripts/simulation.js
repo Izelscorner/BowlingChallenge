@@ -52,7 +52,7 @@ if (typeof(bowlingChallenge) == 'undefined') {
     scope.updateRollButton = function() {
         var but = document.getElementById('btnRoll');
         but.disabled = false;
-        but.innerHTML = 'Player #' + scope.currentPlayerIndex + '<br> Random Roll';
+        but.innerHTML = 'Player #' + scope.currentPlayerIndex + '<br> Let\'s Bowl';
     };
 
 
