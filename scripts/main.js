@@ -68,6 +68,12 @@ if (typeof(bowlingChallenge) == 'undefined') {
         //turn off animation to prevent async operation to cause race condition in loop.
         document.getElementById('chkAnimation').checked = false;
         document.getElementById('chkSound').checked = false;
+
+        //If game has ended create new game.
+        if(scope.gameEnd){
+            createNewGame();
+        }
+
         scope.animation = false;
         scope.sound = false;
        
