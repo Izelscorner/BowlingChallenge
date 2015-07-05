@@ -32,9 +32,11 @@ if (typeof(bowlingChallenge) == 'undefined') {
             };
 
 
-            if(scope.animation) {
-                setTimeout(function(){switchOperations();}, 1000);
-            }else{
+            if (scope.animation) {
+                setTimeout(function() {
+                    switchOperations();
+                }, 1000);
+            } else {
                 switchOperations();
             }
 
@@ -78,7 +80,16 @@ if (typeof(bowlingChallenge) == 'undefined') {
                 this.switchToNextPlayer();
             }
 
-            scope.drawPinStates();
+            if (scope.sound) {
+                if (rollScore === 0) {
+                    document.getElementById('failSound').play();
+                } else if (scope.remainingPins === 0) {
+                    document.getElementById('cheerSound').play();
+                } else {
+                    document.getElementById('rollSound').play();
+                }
+            }
+            scope.drawPinStates(rollScore);
             scope.drawScoreBoard();
 
         };

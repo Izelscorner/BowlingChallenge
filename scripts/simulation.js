@@ -21,7 +21,8 @@ if (typeof(bowlingChallenge) == 'undefined') {
 
 
     //Adds some animation to html to display remaining pins.
-    scope.drawPinStates = function() {
+    scope.drawPinStates = function(rollScore) {
+        rollScore = rollScore || 0;
     	var pinHolder = document.getElementById('pinHolder');
     	var scoreText = document.getElementById('scoreText');
         if (!scope.animation) {
@@ -41,7 +42,7 @@ if (typeof(bowlingChallenge) == 'undefined') {
             }
             html += '<span class="pins"></span>';
         }
-        scoreText.innerHTML = 10 - scope.remainingPins + ' Pins Downs';
+        scoreText.innerHTML = rollScore + ' Pins Downs';
         pinHolder.innerHTML = html;
     };
     scope.disableRollButtonForAnimation = function() {

@@ -28,6 +28,7 @@ if (typeof(bowlingChallenge) == 'undefined') {
             for (var i = 0; i < numberOfPlayers; i++) {
                 scope.players.push(new scope.player(i));
             }
+            scope.sound = true;
             scope.drawScoreBoard();
             scope.updateRollButton();
             scope.drawPinStates();
@@ -46,8 +47,16 @@ if (typeof(bowlingChallenge) == 'undefined') {
     };
 
     document.getElementById('chkAnimation').onchange = function() {
-            createNewGame();
+        createNewGame();
     };
+
+
+    document.getElementById('chkSound').onchange = function() {
+        scope.sound = document.getElementById('chkSound').checked
+    };
+
+
+
 
     //Roll Ball for current player
     document.getElementById('btnRoll').onclick = function() {
@@ -58,7 +67,8 @@ if (typeof(bowlingChallenge) == 'undefined') {
     document.getElementById('btnAutoPlay').onclick = function() {
         //turn off animation to prevent async operation to cause race condition in loop.
         document.getElementById('chkAnimation').checked = false;
-        createNewGame();  
+        document.getElementById('chkSound').checked = false;
+        createNewGame();
         while (!scope.gameEnd) {
             scope.players[scope.currentPlayerIndex].rollBall();
         }

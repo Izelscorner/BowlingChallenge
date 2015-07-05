@@ -10,7 +10,7 @@
 
 <body>
     <div main="container">
-        <h1>Bowling Challenge</h1>
+        <h1>Bowling Challenge (Turn on sound	)</h1>
         <div class="newGame">
             <label>
                 Choose number of players (max 6)
@@ -20,6 +20,11 @@
         <div class="newGame">
             <label>Pin Animation (Faster results without animation.)
                 <input type="checkbox" id="chkAnimation" checked="true">
+            </label>
+        </div>
+        <div class="newGame">
+            <label>Sound Effects
+                <input type="checkbox" id="chkSound" checked="true">
             </label>
         </div>
         <div class="newGame">
@@ -44,6 +49,9 @@
         <div id="scoreBoard">
         </div>
     </div>
+    <audio id="rollSound" src="effects/hit.mp3" preload="auto"></audio>
+    <audio id="failSound" src="effects/fail.mp3" preload="auto"></audio>
+    <audio id="cheerSound" src="effects/cheer.mp3" preload="auto"></audio>
     <script src="scripts/player.js"></script>
     <script src="scripts/simulation.js"></script>
     <script src="scripts/score.js"></script>
