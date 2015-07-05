@@ -35,5 +35,6 @@ Tested on Chrome , Firefox and Safari.
 Izel Aciman
 
 ## Disclaimer
-All images & Sound Effects are copyright to their respective owners.
+This website is only for illustration purposes no intend for distribution or public use.
+All images & sound effects are copyright to their respective owners.
 
