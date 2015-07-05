@@ -28,7 +28,7 @@ if (typeof(bowlingChallenge) == 'undefined') {
             for (var i = 0; i < numberOfPlayers; i++) {
                 scope.players.push(new scope.player(i));
             }
-            scope.sound = document.getElementById('chkSound').checked;;
+            scope.sound = document.getElementById('chkSound').checked;
             scope.drawScoreBoard();
             scope.updateRollButton();
             scope.drawPinStates();
@@ -47,12 +47,12 @@ if (typeof(bowlingChallenge) == 'undefined') {
     };
     //Turn off or on the animation
     document.getElementById('chkAnimation').onchange = function() {
-        scope.animation = document.getElementById('chkAnimation').checked
+        scope.animation = document.getElementById('chkAnimation').checked;
     };
 
     //Turn off or on the sound effect
     document.getElementById('chkSound').onchange = function() {
-        scope.sound = document.getElementById('chkSound').checked
+        scope.sound = document.getElementById('chkSound').checked;
     };
 
 
