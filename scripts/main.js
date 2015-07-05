@@ -28,7 +28,7 @@ if (typeof(bowlingChallenge) == 'undefined') {
             for (var i = 0; i < numberOfPlayers; i++) {
                 scope.players.push(new scope.player(i));
             }
-            scope.sound = true;
+            scope.sound = document.getElementById('chkSound').checked;;
             scope.drawScoreBoard();
             scope.updateRollButton();
             scope.drawPinStates();
