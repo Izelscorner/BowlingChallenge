@@ -23,15 +23,20 @@ if (typeof(bowlingChallenge) == 'undefined') {
             scope.players = [];
             scope.currentPlayerIndex = 0;
             scope.numberOfPlayers = numberOfPlayers;
-            scope.remainingPins = 10;
+            scope.maxNumOfPins = 10;
+            scope.remainingPins = scope.maxNumOfPins;
             scope.animation = document.getElementById('chkAnimation').checked;
+            scope.sound = document.getElementById('chkSound').checked;
+
+            //Add Players to players array
             for (var i = 0; i < numberOfPlayers; i++) {
                 scope.players.push(new scope.player(i));
             }
-            scope.sound = document.getElementById('chkSound').checked;
+
             scope.drawScoreBoard();
             scope.updateRollButton();
             scope.drawPinStates();
+         
 
         } else {
             window.alert('Please enter a valid integer value');
@@ -70,13 +75,13 @@ if (typeof(bowlingChallenge) == 'undefined') {
         document.getElementById('chkSound').checked = false;
 
         //If game has ended create new game.
-        if(scope.gameEnd){
+        if (scope.gameEnd) {
             createNewGame();
         }
 
         scope.animation = false;
         scope.sound = false;
-       
+
         while (!scope.gameEnd) {
             scope.players[scope.currentPlayerIndex].rollBall();
         }

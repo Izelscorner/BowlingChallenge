@@ -25,7 +25,7 @@ if (typeof(bowlingChallenge) == 'undefined') {
                 } else {
                     scope.currentPlayerIndex++;
                 }
-                scope.remainingPins = 10;
+                scope.remainingPins = scope.maxNumOfPins;
 
                 scope.updateRollButton();
                 scope.drawPinStates();
@@ -65,9 +65,9 @@ if (typeof(bowlingChallenge) == 'undefined') {
 
             if (this.scores[this.frameIndex].firstRoll === null) { // First Roll
                 this.scores[this.frameIndex].firstRoll = rollScore;
-                scope.remainingPins = 10 - rollScore;
+                scope.remainingPins = scope.maxNumOfPins - rollScore;
 
-                if (rollScore == 10) { //  Check if it's a strike
+                if (rollScore == scope.maxNumOfPins) { //  Check if it's a strike
 
                     //this.scores[this.frameIndex].secondRoll = 0;
                     this.frameIndex++;

@@ -26,7 +26,7 @@ if (typeof(bowlingChallenge) == 'undefined') {
                 if (this.getNextScore() === null) { //Last Hand no Additional frams 20 points bonus 
                     return 20;
                 } else if (this.getNextScore().firstRoll !== null) { //Add Second Roll
-                    return 10 + this.getNextScore().firstRoll;
+                    return scope.maxNumOfPins + this.getNextScore().firstRoll;
                 } else {
                     return '';
                 }
@@ -34,20 +34,20 @@ if (typeof(bowlingChallenge) == 'undefined') {
 
             this.calculateStrikeSum = function() {
 
-                if (this.getNextScore() === null || (this.getNextScore().firstRoll === 10 && this.getNextScore().getNextScore() === null)) { //Last Hand No Additional Frames directly 30 points bonus
+                if (this.getNextScore() === null || (this.getNextScore().firstRoll === scope.maxNumOfPins && this.getNextScore().getNextScore() === null)) { //Last Hand No Additional Frames directly 30 points bonus
                     return 30;
-                } else if (this.getNextScore().firstRoll === 10 && this.getNextScore().getNextScore().firstRoll !== null) { // two row in a strike 
-                    return 10 + this.getNextScore().firstRoll + this.getNextScore().getNextScore().firstRoll;
-                } else if (this.getNextScore().firstRoll !== 10 && this.getNextScore().secondRoll !== null) { // No following strike
-                    return 10 + this.getNextScore().firstRoll + this.getNextScore().secondRoll;
+                } else if (this.getNextScore().firstRoll === scope.maxNumOfPins && this.getNextScore().getNextScore().firstRoll !== null) { // two row in a strike 
+                    return scope.maxNumOfPins + this.getNextScore().firstRoll + this.getNextScore().getNextScore().firstRoll;
+                } else if (this.getNextScore().firstRoll !== scope.maxNumOfPins && this.getNextScore().secondRoll !== null) { // No following strike
+                    return scope.maxNumOfPins + this.getNextScore().firstRoll + this.getNextScore().secondRoll;
                 } else {
                     return '';
                 }
             };
             this.total = function() {
-                if (this.firstRoll == 10) { // Strike
+                if (this.firstRoll == scope.maxNumOfPins) { // Strike
                     return this.calculateStrikeSum();
-                } else if (this.firstRoll + this.secondRoll == 10) { //  Pair
+                } else if (this.firstRoll + this.secondRoll == scope.maxNumOfPins) { //  Pair
                     return this.calculatePairSum();
                 } else { //No pair or Strike
                     return this.firstRoll + this.secondRoll;
@@ -66,11 +66,11 @@ if (typeof(bowlingChallenge) == 'undefined') {
             html += '</td>';
             for (var j = 0; j < scope.players[i].scores.length; j++) {
                 html += '<td>';
-                if (scope.players[i].scores[j].firstRoll == 10) {
+                if (scope.players[i].scores[j].firstRoll == scope.maxNumOfPins) {
                     html += '<span class="strike">X</span>';
                 } else {
                     html += '<span class="frameScores">' + (scope.players[i].scores[j].firstRoll === null ? '-' : scope.players[i].scores[j].firstRoll) + ' <span class="seperator">|</span> </span>';
-                    if (scope.players[i].scores[j].firstRoll + scope.players[i].scores[j].secondRoll === 10) {
+                    if (scope.players[i].scores[j].firstRoll + scope.players[i].scores[j].secondRoll === scope.maxNumOfPins) {
                         html += '<span>/</span>';
                     } else {
                         html += '<span>' + (scope.players[i].scores[j].secondRoll === null ? '-' : scope.players[i].scores[j].secondRoll) + '  </span>';
